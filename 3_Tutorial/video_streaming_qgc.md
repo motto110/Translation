@@ -1,14 +1,14 @@
 # QGC的视频流
 
-# Video streaming in QGroundControl
+# QGC的视频流
 
-This page shows how to set up a a companion computer (Odroid C1) with a camera (Logitech C920) such that the video stream is transferred via the Odroid C1 to a network computer and displayed in the application QGroundControl that runs on this computer.
+这页面说明如何建立一台带一个镜头(Logitech C920) 的配套工业计算机Odroid C1  ，视频流通过Odroid C1（ODROID　C1）传输到网络计算机和在计算机上的QDC应用显示运行。 
 
-The whole hardware setup is shown in the figure below. It consists of the following parts:
 
-- Odroid C1
-- Logitech camera C920
-- WiFi module TP-LINK TL-WN722N
+整个硬件设置如下所示。它由以下几个部分组成： 
+-Odroid C1Odroid C1
+-罗技镜头Logitech camera C920
+-WIFI猫WiFi module TP-LINK TL-WN722N
 
  ![setup-whole](../pictures/videostreaming\setup-whole.png)
 
