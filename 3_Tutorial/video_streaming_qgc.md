@@ -25,8 +25,7 @@ Odroid C1 能够通过5V DC电源插孔。如果ODROID是安装在无人机的�
 
 ## 启用ODROID C1 WiFi连接 
 
-在这本教程的WiFi模块采用TP-LINK tl-wn722n。 要启用的ODROID C1的WiFi连接，按照 ODROID C1教程的步骤描述用WiFi天线建立网络连接。[Odroid C1 tutorial](https://pixhawk.org/peripherals/onboard_computers/odroid_c1) in 
-
+在这本教程的WiFi模块采用TP-LINK tl-wn722n。 要启用的ODROID C1的WiFi连接，按照[ ODROID C1教程](https://pixhawk.org/peripherals/onboard_computers/odroid_c1)的步骤描述用WiFi天线建立网络连接。
 ## 配置WiFi接入点 
 
 本节说明如何设置ODROID C1一个数据接入点。内容在原有 [教程](https://pixhawk.org/peripherals/onboard_computers/access_point) 上作一些小的改进。 启动视频流从摄像头的通过到地面站，运行在计算机则不需要遵循本节。然而，这里表示是因为建立ODROID C1像允许以一个独立的方式使用系统的数据接入点。TP-LINK TL-WN722N使用像WiFi模块。在随后的步骤它是假定指定名称的ODROID系列C1 WLAN 0到你的WiFi模块。改变WLAN 0的所有事件如果相应接口不同（如wlan1）。 
