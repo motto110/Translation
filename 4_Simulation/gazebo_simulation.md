@@ -1,20 +1,12 @@
 # Gazebo仿真
 ---
 官网英文原文地址：http://dev.px4.io/simulation-gazebo.html
-# Gazebo Simulation
 
-[Gazebo](http://gazebosim.org) is a 3D simulation environment for autonomous robots. It can be used with ROS as complete robotics simulation suite or standalone, and this guide covers the simpler to set up standalone operation.
+# Gazebo 仿真
 
-{% raw %}
-<video id="my-video" class="video-js" controls preload="auto" width="100%" 
-poster="../pictures/diagrams/PX4-Flight.JPG" data-setup='{"aspectRatio":"16:9"}'>
-  <source src="http://7xvob5.com1.z0.glb.clouddn.com/2-PX4%20Flight%20Stack%20ROS%203D%20Software%20in%20the%20Loop%20Simulation%20(SITL).mp4" type='video/mp4' >
-  <p class="vjs-no-js">
-    To view this video please enable JavaScript, and consider upgrading to a web browser that
-    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-  </p>
-</video>
-{% endraw %}
+[Gazebo](http://gazebosim.org) 是一个自动机械手3D 模拟环境 . 它能够使用ROS 就像使用完整或独立的机器人仿真套件一样, 本指南包括简单的设置独立的操作。
+
+{% youtube %}https://www.youtube.com/watch?v=qfFF9-0k4KA&vq=hd720{% endyoutube %}
 
 {% mermaid %}
 graph LR;
@@ -24,17 +16,17 @@ graph LR;
 {% endmermaid %}
 
 
-## Installation
+## 安装
 
-The installation requires to install Gazebo and our simulation plugin.
+安装请求安装 Gazebo 和仿真插件.
 
 <aside class="tip">
-Gazebo version 6 should be used. Linux users: If you installed a ROS version earlier than Jade, be sure to uninstall the bundled Gazebo (sudo apt-get remove ros-indigo-gazebo) version as it is too old.
+Gazebo 版本 6 可以使用. Linux 使用者: 如果你已经安装一个比Jade更早的ROS版本 , 务必卸载捆绑 Gazebo (sudo apt-get remove ros-indigo-gazebo) 太旧的版本 .
 </aside>
 
 ### Mac OS
 
-Mac OS requires Gazebo 6.
+Mac OS 请求安装 Gazebo 6.
 
 <div class="host-code"></div>
 
@@ -42,23 +34,23 @@ Mac OS requires Gazebo 6.
 brew install gazebo6
 ```
 
-### Linux
+### Linux安装
 
-The PX4 SITL uses the Gazebo simulator, but does not depend on ROS. The simulation can be [interfaced to ROS](../4_Simulation/interfacingto_ros.md) the same way as normal flight code is.
+ PX4 SITL使用 the Gazebo 仿真, 但不依靠 ROS仿真也能够 像普通的飞行代码的同样方式[联接到ROS](../4_Simulation/interfacingto_ros.md) .
 
-#### ROS Users
+#### ROS 使用者
 
-If you plan to use PX4 with ROS, make sure to follow the [Gazebo version guide for version 6](http://gazebosim.org/tutorials?tut=ros_wrapper_versions#Gazebo6.xseries) for ROS.
+如果计划使用带 ROS的PX4 , 一定要遵循  [Gazebo 版本6指南](http://gazebosim.org/tutorials?tut=ros_wrapper_versions#Gazebo6.xseries) 使用 ROS.
 
-#### Normal Installation
+#### 普通安装
 
-Follow the [Linux installation instructions](http://gazebosim.org/tutorials?tut=install_ubuntu&ver=6.0&cat=install) for Gazebo 6.
+遵循 [Linux 安装指令](http://gazebosim.org/tutorials?tut=install_ubuntu&ver=6.0&cat=install) 安装 Gazebo 6.
 
-## Running the Simulation
+## 运行仿真
 
-From within the source directory of the PX4 Firmware run the PX4 SITL with one of the airframes (Quads, planes and VTOL are supported, including optical flow):
+PX4固件是能在一个飞行器 PX4 SITL模拟器 (支持四轴, 固定翼 和 垂直飞降, 包括光流)的源目录上运行:
 
-### Quadrotor
+### 四旋翼
 
 <div class="host-code"></div>
 
@@ -67,7 +59,7 @@ cd ~/src/Firmware
 make posix_sitl_default gazebo
 ```
 
-### Quadrotor with Optical Flow
+### 带光流四旋翼
 
 <div class="host-code"></div>
 
@@ -76,7 +68,7 @@ cd ~/src/Firmware
 make posix gazebo_iris_opt_flow
 ```
 
-### Standard VTOL
+### 标准垂直起降
 
 <div class="host-code"></div>
 
@@ -85,7 +77,7 @@ cd ~/src/Firmware
 make posix_sitl_default gazebo_standard_vtol
 ```
 
-### Tailsitter VTOL
+### Tailsitter垂直起降 
 
 <div class="host-code"></div>
 
@@ -95,10 +87,10 @@ make posix_sitl_default gazebo_tailsitter
 ```
 
 <aside class="tip">
-Make sure you followed the [Installing Files and Code](http://dev.px4.io/starting-installing-mac.html) guide appropiate for your OS if you run into any errors or missing dependencies.
+如果你遇到任何错误或者缺少的依赖项，一定要遵循 [安装文件和代码](http://dev.px4.io/starting-installing-mac.html) 指南适配于你的操作系统。
 <aside>
 
-This will bring up the PX4 shell:
+这提到 PX4 shell:
 
 ```sh
 [init] shell id: 140735313310464
@@ -111,38 +103,38 @@ ______  __   __    ___
 | |     / /^\ \ \___  |
 \_|     \/   \/     |_/
 
-Ready to fly.
+准备飞行.
 
 
 pxh>
 ```
 
 <aside class="note">
-Right-clicking the quadrotor model allows to enable follow mode from the context menu, which is handy to keep it in view.
+正确检查四轴模式是否允许从内容菜单中启用“跟随模式”, 这是方便保持它在视图 .
 </aside>
 
-## Taking it to the Sky
+## 飞在空中
 
  ![gazebo](../pictures/sim\gazebo.png)
 
-The system will print the home position once it finished intializing (`telem> home: 55.7533950, 37.6254270, -0.00`). You can bring it into the air by typing:
+一旦它完成了初始化后，系统将显现原点。  (`telem> home: 55.7533950, 37.6254270, -0.00`). 你能靠输入命令验证:
 
 ```sh
 pxh> commander takeoff
 ```
 
 <aside class="tip">
-Joystick or thumb-joystick support is available through QGroundControl (QGC). To use manual input, put the system in a manual flight mode (e.g. POSCTL, position control). Enable the thumb joystick from the QGC preferences menu.
+ 可以通过地面站(QGC)用手动输入支持操纵杆或拇指操纵杆 , 把系统打到手动飞行模式 (e.g. POSCTL, 位置控制).从地面站参数菜单中启动拇指操纵杆。
 </aside>
 
-## Extending and Customizing
+## 扩展和自定义
 
-To extend or customize the simulation interface, edit the files in the `Tools/sitl_gazebo` folder. The code can be accessed through the [sitl_gazebo repository](https://github.com/px4/sitl_gazebo) on Github.
+扩展或者自定义仿真接口, 编辑文档在 `Tools/sitl_gazebo` 文件夹. 代码数据能够通过 [sitl_gazebo repository](https://github.com/px4/sitl_gazebo) 在 Github网站上取得.
 
 <aside class="note">
-The build system enforces the correct submodule to be checked out for all dependencies, including the simulator. It will not overwrite changes in files in the directory, however, when these changes are comitted the submodule needs to be registered in the Firmware repo with the new commit hash. To do so, `git add Tools/sitl_gazebo` and commit the change. This will update the GIT hash of the simulator.
+建立系统实施被检验正确的子模块的所有依赖项, 包括模拟器. 它不会覆盖目录中的文件的更改, 然而, 当这些改变是继承了需要在固件中重新获得新的HASH协议注册的子模块.  这样做, `git add Tools/sitl_gazebo` 和继承修改. 这将更新模拟器的 GIT hash.
 </aside>
 
-## Interfacing to ROS
+## 联接到ROS
 
-The simulation can be [interfaced to ROS](../4_Simulation/interfacingto_ros.md) the same way as onboard a real vehicle.
+仿真能够 [联接到 ROS](../4_Simulation/interfacingto_ros.md) 同样方式像在使用一辆真车一样.
